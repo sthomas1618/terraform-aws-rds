@@ -64,6 +64,10 @@ resource "aws_db_instance" "default" {
   monitoring_role_arn = var.monitoring_role_arn
 
   timezone = var.timezone
+
+  timeouts {
+    create = "80m"
+  }
 }
 
 resource "aws_db_parameter_group" "default" {
